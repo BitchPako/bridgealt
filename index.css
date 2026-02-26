@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --motion-duration-fast: 120ms;
+  --motion-duration-md: 180ms;
+  --motion-duration-slow: 240ms;
+  --motion-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-emphasis: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@layer utilities {
+  .safe-top {
+    padding-top: max(var(--safe-top-base, 0px), env(safe-area-inset-top));
+  }
+
+  .safe-bottom {
+    padding-bottom: max(var(--safe-bottom-base, 0px), env(safe-area-inset-bottom));
+  }
+
+  .safe-menu {
+    max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 16px);
+    overflow-y: auto;
+  }
+
+  .safe-inset-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-inset-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-inset-right {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+:root {
+  --motion-duration-fast: 120ms;
+  --motion-duration-standard: 180ms;
+  --motion-duration-slow: 240ms;
+  --motion-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-pulse,
+  .animate-bounce,
+  .animate-pulse-glow,
+  .animate-stagger-entry,
+  .animate-enter-msg,
+  .hover-glitch,
+  .animate-in,
+  .slide-in-from-top,
+  .slide-in-from-bottom,
+  .slide-in-from-bottom-2,
+  .slide-in-from-left-2,
+  .zoom-in-95,
+  .fade-in {
+    animation: none !important;
+    transform: none !important;
+  }
+}
