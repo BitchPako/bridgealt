@@ -1,8 +1,5 @@
 {
-  "name": "Copy of Bridge - secure messenger",
-  "description": "A high-performance, production-grade messaging application inspired by Telegram, featuring real-time conversations, group chats, channels, and advanced media sharing capabilities.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
+  "name": "Ejabberd Web Client",
+  "description": "A modern XMPP messenger client for connecting to ejabberd servers.",
+  "requestFramePermissions": []
 }
